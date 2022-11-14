@@ -1,11 +1,11 @@
 export class Respuesta{
 
-    idr;
-    descripcion;
-    calificacion;
-    fecha;
-    idp;
-    idu;
+    idr: number;
+    descripcion: string;
+    calificacion: number;
+    fecha: Date;
+    idp: number;
+    idu: number;
     
     constructor(idr, descripcion, calificacion, fecha, idp,idu){
         this.idr = idr;

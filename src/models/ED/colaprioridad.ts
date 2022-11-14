@@ -1,5 +1,7 @@
 export class PriorityQueue{
 
+  elements: any[];
+
   constructor(){
     this.elements = [];
   }
@@ -13,7 +15,7 @@ export class PriorityQueue{
   add( element){
 
     this.elements.push(element);
-    flotar(this.elements.length-1);
+    this.flotar(this.elements.length-1);
 }
 
   flotar(pos){
@@ -22,9 +24,9 @@ export class PriorityQueue{
 
      let padre= (pos-1)/2; 
 
-      if(this.elements[padre].compareTo(elements[pos]) > 0){
+      if(this.elements[padre].compareTo(this.elements[pos]) > 0){
 
-          let aux=elements[pos];
+          let aux=this.elements[pos];
             this.elements[pos] = this.elements[padre];
             this.elements[padre]=aux;
             pos = padre;
@@ -40,12 +42,12 @@ export class PriorityQueue{
 
   while(pos < this.elements.length / 2){
         let hijo = 2 * pos + 1;
-        if(2 * pos+ 2 < this.elements.length && elements[hijo].compareTo(elements[hijo + 1]) > 0)
+        if(2 * pos+ 2 < this.elements.length && this.elements[hijo].compareTo(this.elements[hijo + 1]) > 0)
             ++hijo; 
-        if(elements[pos].compareTo(elements[hijo]) > 0){
-            let aux=elements[pos];
-            elements[pos] = elements[hijo];
-            elements[hijo]=aux;
+        if(this.elements[pos].compareTo(this.elements[hijo]) > 0){
+            let aux=this.elements[pos];
+            this.elements[pos] = this.elements[hijo];
+            this.elements[hijo]=aux;
             pos = hijo;
         }
         else pos=this.elements.length;      
@@ -53,14 +55,14 @@ export class PriorityQueue{
 }
 
  minimo(){    
-    return elements[0];
+    return this.elements[0];
 }
 
 
   eliminarMin(){
-    min=elements[0];
-    elements[0]=elements[this.elements.length-1];
-    hundir(0);
+    let min=this.elements[0];
+    this.elements[0]=this.elements[this.elements.length-1];
+    this.hundir(0);
     return min;
 }
 
