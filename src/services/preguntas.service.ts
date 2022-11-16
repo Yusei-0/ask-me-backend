@@ -1,5 +1,5 @@
 import { getPreguntas } from "../database/preguntas.store";
-import { Preguntas } from "../models/Preguntas";
+import { Preguntas } from "../modelos/Preguntas";
 import { BurbujaPreguntas } from "../utils/burbujaPreguntas";
 import { busquedaLinealPorAsignatura } from "../utils/busquedaLineal";
 
