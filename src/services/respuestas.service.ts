@@ -1,10 +1,11 @@
 import { getRespuestas } from "../database/Respuestas.store";
-import { PriorityQueue } from "../models/ED/colaprioridad";
-import { Respuesta } from "../models/Respuestas";
+import { PriorityQueue } from "../modelos/ED/colaprioridad";
+import { Respuesta } from "../modelos/Respuestas.class";
 
 export class RespuestasService {
 
     PQ_Respuestas = new PriorityQueue();
+    respuestas; 
 
     constructor ()
     {  
